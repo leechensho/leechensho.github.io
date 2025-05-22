@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto"><!-- InstanceBegin template="/Templates/temp.dwt.html" codeOutsideHTMLIsLocked="false" -->
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>李承修教師網站</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="offcanvas-navbar.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">李承修教師網站</a>
+    <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mypaper.html">期刊論文</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myconference.html">研討會論文</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myresearchprogram.html">研究計畫</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="stperformance.html">指導學生獲獎</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myperform.html">個人獲獎</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mycertificate.html">個人證照</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mybooks.html">專書</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myoffice.html">行政經歷</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mylab.html">專題實驗室</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://210.70.191.233/~lcs/lcsmdle/" target="_blank">數位學習平台</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            活動紀錄
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="https://youtu.be/W_w4TclSNRc" target="_blank">111級畢業單車行</a></li>
+            <li><a class="dropdown-item" href="https://youtu.be/JYysYq2xMog?si=heAFtGQMWRlZfZAw" target="_blank">113級畢業單車行</a></li>
+
+          </ul>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="https://drive.google.com/file/d/1-ZYTpLdCeLFEv-WSvt2bY5qHEv8r_SVf/view?usp=share_link" target="_blank">我的AR名片</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<main class="container">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/slide00.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/slide01.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/slide02.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/slide03.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<p></p>
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm"><!-- InstanceBeginEditable name="EditRegion1" -->
+  <p><h1 class="display-8">期刊論文</h1></p>
+	<table class="table table-striped table-hover">
+	  <tr>
+	    <td width="14%">序號</td>
+	    <td width="86%">論文名稱</td>
+      </tr>
+	  	  	    <tr>
+	      <td>1</td>
+	      <td>李承修*(2025)。新興科技應用於電腦硬體裝修乙級檢定課程之創新與教學實踐研究。大學教學實務與研究學刊。(已接受刊登)</td>
+        </tr>
+	    	    <tr>
+              <tr>
+	      <td>2</td>
+	      <td>Cheng-Hsiu Li*(2025). <a href="https://ojs.imeti.org/index.php/IJETI/article/view/13851" target="_blank">Development and Application of a Body Joint Angle Detection System for Free-Throw Shooting Prediction and Posture Correction</a>, International Journal of Engineering and Technology Innovation, Vol.15, No.1, pp.99-112. (IJETI)(EI).</td>
+        </tr>
+	    	    <tr>
+	      <td>3</td>
+	      <td>Cheng-Hsiu Li*(2024). <a href="https://ojs.imeti.org/index.php/EMSI/article/view/12980" target="_blank">Integrating Gamification Elements into a Personalized Cognitive Mobile-learning LINE Bot</a>, Emerging Science Innovation, Vol.3, pp.27-42. (EMSI).</td>
+        </tr>
+	    	    <tr>
+	      <td>4</td>
+	      <td>Yu-Hung Hsu & Cheng-Hsiu Li*(2024). <a href="http://www.csroc.org.tw/journal/JOC35-1/JOC3501-09.pdf" target="_blank">Using Machine-Learning Technology to Implement a Nonhardware and Inexpensive Posture Detection System for Analyzing Body Posture Angles in Front Crawl Swimming</a>, Journal of Computers, Vol.35, No.1, pp.131-143. (JOC)(EI).</td>
+        </tr>
+	    	    <tr>
+	      <td>5</td>
+	      <td>Cheng-Hsiu Li*(2023). <a href="https://ojs.imeti.org/index.php/IJETI/article/view/10247" target="_blank">Instructional Design, Learning Satisfaction, and Learning Outcome in a Virtual-Reality Learning Environment Aimed at Improving the Cognition of Computer Hardware Components</a>, International Journal of Engineering and Technology Innovation, Vol.13, No.2, pp.111-124. (IJETI).(EI)</td>
+        </tr>
+	    	    <tr>
+	      <td>6</td>
+	      <td>Cheng-Hsiu Li*(2021). <a href="https://iopscience.iop.org/article/10.1088/1757-899X/1113/1/012015" target="_blank">Building an asynchronous HTML5-related competency-based guided e-learning system</a>, IOP Conference Series: Materials Science and Engineering (MSE), 1113 012015, doi:10.1088/1757-899X/1113/1/012015.</td>
+        </tr>
+            <tr>
+	      <td>7</td>
+	      <td>Cheng Hsiu Li*, Chi Yu Chen, Xuan Rui Huang, Ting Fu Tsai and Bo Yang Liu (2021). <a href="https://iopscience.iop.org/article/10.1088/1757-899X/1113/1/012022" target="_blank">Development and application of an internet of things door lock Network Bridge for classroom access control management</a>, IOP Conference Series: Materials Science and Engineering (MSE), 1113 012022, doi:10.1088/1757-899X/1113/1/012022.</td>
+        </tr>	    	    
+	    	    <tr>
+	      <td>8</td>
+	      <td>Cheng-Hsiu Li*(2019). <a href="https://iopscience.iop.org/article/10.1088/1757-899X/658/1/012004" target="_blank">Gamification of an Asynchronous HTML5-Related Competency-Based Guided Learning System</a>, IOP Conference Series: Materials Science and Engineering (MSE), 658 012004, doi:10.1088/1757-899X/658/1/012004.(EI)</td>
+        </tr>
+	    	    <tr>
+	      <td>9</td>
+	      <td>Cheng-Hsiu Li*(2018). <a href="https://www.matec-conferences.org/articles/matecconf/abs/2018/28/matecconf_imeti2018_01002/matecconf_imeti2018_01002.html" target="_blank">A proficiency-based learning algorithm applied to e-learning system for knowledge-oriented course</a>, MATEC Web of Conferences, Vol. 169, 01002.(EI)</td>
+        </tr>
+	    	    <tr>
+	      <td>10</td>
+	      <td>李承修*、徐偉智(2018)。<a href="https://www.airitilibrary.com/Article/Detail/P20170615002-201801-201804240007-201804240007-1-30" target="_blank">運用協作式電腦輔助學習機制於可合作式專案企劃訓練系統之設計與實現</a>。數位學習科技期刊，第10卷，第1期，pp.1-30。(TSSCI)</td>
+        </tr>
+	    	    <tr>
+	      <td>11</td>
+	      <td>Feng-Ying Chou, Cheng-Chang Jeng & Cheng-Hsiu Li(2017), Verifying the Mediating Effect of the Expectations of Significant Others on the Academic Achievement and Self-Expectations of Indigenous Students, Imperial Journal of Interdisciplinary Research (IJIR), Vol.3, No.2, pp.248-250.</td>
+        </tr>
+	    	    <tr>
+	      <td>12</td>
+	      <td>Feng-Ying Chou, Cheng-Chang Jeng & Cheng-Hsiu Li(2016), An Exploration into the Family Backgrounds and Educational Expectations of Indigenous Students with Academic Achievement as an Intervening Variable, Journal of Education & Social Policy, Vol.3, No.6, pp.27-31.</td>
+        </tr>
+	    	    <tr>
+	      <td>13</td>
+	      <td>李承修*(2014)。利用決策樹分類最佳化演算法實現連續數值型態之最佳化分類。臺東專科學校學報，第3期，pp.1-24。</td>
+        </tr>
+	    	    <tr>
+	      <td>14</td>
+	      <td>Wei-Chih Hsu and Cheng-Hsiu Li* (2013), <a href="https://www.scientific.net/AMM.284-287.3305" target="_blank">An Adaptively-guiding Web-based E-learning System Based on Competency-based Learning Theory</a>, Applied Mechanics and Materials, Vols. 284-287, pp 3305-3309. (EI)</td>
+        </tr>
+	    	    <tr>
+	      <td>15</td>
+	      <td>Wei-Chih Hsu and Cheng-Hsiu Li* (2012), <a href="https://www.tandfonline.com/doi/abs/10.1080/10494820.2012.745432" target="_blank">A competency-based guided-learning algorithm applied on adaptively guiding e-learning</a>, Interactive Learning Environments, DOI:10.1080/10494820.2012.745432 (SSCI)</td>
+        </tr>
+	    	    <tr>
+	      <td>16</td>
+	      <td>Wei-Chih Hsu and Cheng-Hsiu Li*(2012), <a href="https://www.naturalspublishing.com/Article.asp?ArtcID=1063" target="_blank">Using Script Command to Conquer the Narrowband Constraint in Synchronous Long-distance Teaching System</a>, Appl. Math. Inf. Sci. , Vol.6, No.2S, pp.685S-695S. (SCI)</td>
+        </tr>
+	    	    <tr>
+	      <td>17</td>
+	      <td>Wei-Chih Hsu and Cheng-Hsiu Li*(2011), Implementation and Effective Evaluation of the Portable MOODLE E-learning Platform, American Journal of Engineering and Technology Research, Vol.11, No.12, pp.2679-2682. (EI)</td>
+        </tr>
+	    	    <tr>
+	      <td>18</td>
+	      <td>周鳳英、鄭承昌、連廷嘉、李承修(2009)。校園網路留言板分析與權力運作之研究。網路社會學通訊，第76期。</td>
+        </tr>
+	    	    <tr>
+	      <td>19</td>
+	      <td>李承修*、周鳳英(2007)。電腦輔助教學在電腦硬體裝修乙級檢定之應用與學習滿意度之研究-以台東縣花東縱谷地區職業學校為例。師說雙月刊，第201期，pp.50-59。</td>
+        </tr>
+	    	    <tr>
+	      <td>20</td>
+	      <td>周鳳英、李承修*(2007)。<a href="https://www.airitilibrary.com/Article/Detail/10257578-200701-40-1-53-69-a" target="_blank">Live CD技術在電腦硬體裝修丙級檢定之應用-讓伺服器帶著走</a>。生活科技教育期刊，四十卷，第一期，pp.53-69。</td>
+        </tr>
+	        </table>
+  
+  <!-- InstanceEndEditable --></div>
+
+<figure class="text-center">
+  <blockquote class="blockquote">
+    <p><h6>國立臺東專科學校資訊管理科 李承修副教授</h6></p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <cite title="Source Title">2023.2 製作</cite>
+  </figcaption>
+</figure> 
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="offcanvas-navbar.js"></script></body>
+<!-- InstanceEnd --></html>

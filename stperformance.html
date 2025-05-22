@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto"><!-- InstanceBegin template="/Templates/temp.dwt.html" codeOutsideHTMLIsLocked="false" -->
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>李承修教師網站</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="offcanvas-navbar.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">李承修教師網站</a>
+    <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mypaper.html">期刊論文</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myconference.html">研討會論文</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myresearchprogram.html">研究計畫</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="stperformance.html">指導學生獲獎</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myperform.html">個人獲獎</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mycertificate.html">個人證照</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mybooks.html">專書</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myoffice.html">行政經歷</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mylab.html">專題實驗室</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://210.70.191.233/~lcs/lcsmdle/" target="_blank">數位學習平台</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            活動紀錄
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="https://youtu.be/W_w4TclSNRc" target="_blank">111級畢業單車行</a></li>
+            <li><a class="dropdown-item" href="https://youtu.be/JYysYq2xMog?si=heAFtGQMWRlZfZAw" target="_blank">113級畢業單車行</a></li>
+
+          </ul>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="https://drive.google.com/file/d/1-ZYTpLdCeLFEv-WSvt2bY5qHEv8r_SVf/view?usp=share_link" target="_blank">我的AR名片</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<main class="container">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/slide00.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/slide01.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/slide02.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/slide03.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<p></p>
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm"><!-- InstanceBeginEditable name="EditRegion1" --><p>
+	<h1 class="display-8">指導學生獲獎</h1></p>
+	<table class="table table-striped table-hover">
+	  <tr>
+	    <td width="14%">序號</td>
+	    <td width="86%">獲獎名稱</td>
+      </tr>
+	  	  	    <tr>
+	  	  	      <td>1</td>
+	  	  	      <td>指導東專資管科林紀媗、楊明杰及陳韋勛等三位同學，榮獲<a href="https://www.ntc.edu.tw/p/406-1000-25226,r13.php?Lang=zh-tw" target="_blank">「萬潤2024創新創意競賽」佳作</a>，參賽名稱：救護急時通-救護車即時路口壅塞情形查詢系統，113年10月24日。 </td>
+      </tr>
+	  	  	    <tr>
+	      <td>2</td>
+	      <td>指導東專資管科陳冠瑜、廖翊惟及李澤睿等同學，榮獲<a href="https://www.ner.gov.tw/news/655498dd20215e00229a2a36" target="_blank">「2023年第八屆新創盃全球創意創新創業企劃競賽」全國冠軍</a>，參賽名稱：醫療服務手語翻譯系統之開發及其行銷企劃案，112年11月10日。</td>
+        </tr>
+	    	    <tr>
+	      <td>3</td>
+	      <td>指導東專資管科沈宗緯、劉子睿及粘管祐等同學，榮獲<a href="https://www.ner.gov.tw/news/655498dd20215e00229a2a36" target="_blank">「2023年第八屆新創盃全球創意創新創業企劃競賽」優勝</a>，參賽名稱：罰球投籃準度預測與投姿校正系統之開發及其行銷企劃案，112年11月10日。</td>
+        </tr>
+	    	    <tr>
+	      <td>4</td>
+	      <td>指導東專資管科李冠勳同學，榮獲<a href="https://www.ntc.edu.tw/p/406-1000-18856,r13.php?Lang=zh-tw" target="_blank">「2022年第七屆新創盃全球創意創新創業企劃競賽」全國季軍</a>，參賽名稱：兼具電子商務與購物體驗之虛擬實境網路商店開發及其行銷企劃案，111年11月24日。</td>
+        </tr>
+	    	    <tr>
+	      <td>5</td>
+	      <td>指導東專資管科何竣霖、徐志忠、何宣儒、周士峰等四位同學，榮獲「萬潤2021創新創意競賽」入圍獎，參賽名稱：證照學科教學小幫手，110年10月15日。</td>
+        </tr>
+	    	    <tr>
+	      <td>6</td>
+	      <td>指導東專資管科何竣霖、徐志忠、何宣儒、周士峰等四位同學，榮獲「第18屆育秀盃創意獎」《軟體應用類》入圍複賽，作品名稱：帶路小幫手，110年4月16日。</td>
+        </tr>
+	    	    <tr>
+	      <td>7</td>
+	      <td>指導東專資管科李崧毓、劉晏宇、曾嘉雋、王士毓等四位同學，榮獲「第18屆育秀盃創意獎」《軟體應用類》入圍複賽，作品名稱：DL批次條碼掃描機，110年4月16日。</td>
+        </tr>
+	    	    <tr>
+	      <td>8</td>
+	      <td>指導東專資管科李崧毓、劉晏宇、曾嘉雋、王士毓等四位同學，榮獲「萬潤2020創新創意競賽」入圍獎，參賽名稱：DL批次條碼掃描機，109年10月14日。</td>
+        </tr>
+	    	    <tr>
+	      <td>9</td>
+	      <td>指導東專資管科林育廷、翁銘鴻、蘇泳承、賴宏欣等四位同學，榮獲<a href="https://www.ner.gov.tw/news/5ec641258693590006333868" target="_blank">「第17屆育秀盃創意獎」《軟體應用類》佳作</a>，作品名稱：實虛實境健身車，109年4月28日。</td>
+        </tr>
+	    	    <tr>
+	      <td>10</td>
+	      <td>指導東專資管科林育廷、翁銘鴻、蘇泳承、賴宏欣等四位同學，榮獲<a href="https://imbest.ntc.edu.tw/p/404-1017-8162.php?Lang=zh-tw" target="_blank">「2019 第四屆新創盃全國大專校院創意創新創業企劃競賽」- 創新創業組 佳作</a>，作品名稱：實虛實境健身車，108年12月13日。</td>
+        </tr>
+	    	    <tr>
+	      <td>11</td>
+	      <td>指導東專資管科陳祈宇、黃宣瑞、蔡定甫、劉柏陽等四位同學，榮獲<a href="https://www.taitung.gov.tw/News_Content.aspx?n=13370&s=53942" target="_blank">「2019 第四屆全國青年創意應用競賽」佳作</a>，作品名稱：QR旅宿門控系統，108年4月19日。</td>
+        </tr>
+	    	    <tr>
+	      <td>12</td>
+	      <td>指導專題學生董穎珊、蔡一憑、陳世賢、王郁鈞等四位同學，榮獲東專資管科辦理「106級資管實務專題製作成果展」活動「最佳人氣獎」，專題名稱：人機互動多模式愛眼距離提醒系統，107年6月1日。</td>
+        </tr>
+	    	    <tr>
+	      <td>13</td>
+	      <td>指導專題學生謝桓禎、張家綺、廖宸晉、蔡永麒等四位同學，榮獲東專資管科辦理「106級資管實務專題製作成果展」活動「最佳人氣獎」，專題名稱：組合式物品定位模組，107年6月1日。</td>
+        </tr>
+	    	    <tr>
+	      <td>14</td>
+	      <td>指導東專資管科王郁鈞、陳世賢、蔡一憑、董穎珊等四位同學，榮獲<a href="https://www.taitung.gov.tw/News_Content.aspx?n=13370&s=48162" target="_blank">「萬潤2017創新創意競賽」佳作</a>，參賽企劃名稱：人機互動多模式愛眼距離提醒系統，106年10月12日。</td>
+        </tr>
+	    	    <tr>
+	      <td>15</td>
+	      <td>指導東專資管科王郁鈞、陳世賢、蔡一憑、董穎珊等四位同學，榮獲「2017國立臺東大學學生三創企劃競賽」佳作，參賽企劃名稱：人機互動多模式愛眼距離提醒系統銷售創業企劃書，106年5月26日。</td>
+        </tr>
+	    	    <tr>
+	      <td>16</td>
+	      <td>指導東專資管科王郁鈞、陳世賢、蔡一憑、董穎珊等四位同學，榮獲「2017第28屆馬來西亞ITEX國際發明展」銀牌，參展作品：以網路介面進行遠端電源控制之系統，106年5月11~13日。</td>
+        </tr>
+	    	    <tr>
+	      <td>17</td>
+	      <td>指導東專資管科李富栢、楊適謙、李軒宇、程奕嘉、陳柏宇、薛雲晏等五位同學，榮獲「2016年台北國際發明暨技術交易展-教育部館」參展，參展作品：就是簡單萬用電器雲控器，105年9月29日~10月1日。</td>
+        </tr>
+	    	    <tr>
+	      <td>18</td>
+	      <td>指導東專資管科江長融、鍾雅萍、陳文華、許雅淳、葉俊良等五位同學，參加<a href="https://www.taitung.gov.tw/News_Content.aspx?n=13370&s=41892" target="_blank">105年「Dream Power學生創業競賽」榮獲佳作</a>，105年4月20日。</td>
+        </tr>
+	    	    <tr>
+	      <td>19</td>
+	      <td>指導東專資管科江長融、鄒騰泓、張耿峰、李知珉、鍾雅萍等五位同學以「翻轉偏鄉教育之數位遊戲融入音樂班教學實驗計畫」，參加<a href="https://www.taitung.gov.tw/News_Content.aspx?n=13370&s=39363" target="_blank">104年「青年創意-翻轉偏鄉」MAKER行動實驗計畫</a>，入圍全國決賽，104年9月22日。</td>
+        </tr>
+	    	    <tr>
+	      <td>20</td>
+	      <td>指導東專資管科郭展宇、錢泓宇、廖祥富、陳文華、許雅淳等五位同學，參加<a href="https://www.taitung.gov.tw/News_Content.aspx?n=13370&s=37366" target="_blank">104年「Dream Power學生創業競賽」榮獲第二名</a>，並入圍全國決賽，104年4月14日。</td>
+        </tr>
+	    	    <tr>
+	      <td>21</td>
+	      <td>103年度榮獲「2014融入地方特色之創意擴增實境技術競賽」榮獲第一名，獲獎作品：鹿野高台熱氣球，參賽學生：錢泓宇同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>22</td>
+	      <td>103年度榮獲「2014融入地方特色之創意擴增實境技術競賽」榮獲第三名，獲獎作品：初鹿牧場-乳牛，參賽學生：郭展宇同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>23</td>
+	      <td>103年度榮獲「2014結合地區產業網站架設競賽」榮獲第一名，獲獎作品：手工藝坊<WEI-ZHU>，參賽學生：潘薇竹同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>24</td>
+	      <td>103年度榮獲「2014結合地區產業網站架設競賽」榮獲第三名，獲獎作品：紅葉國小，參賽學生：郭展宇同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>25</td>
+	      <td>103年度榮獲「2014結合地區產業網站架設競賽」榮獲佳作，獲獎作品：台東縣延平鄉桃源國民小學，參賽學生：廖祥富同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>26</td>
+	      <td>103年度榮獲「2014結合地區產業網站架設競賽」榮獲佳作，獲獎作品：卑南國中，參賽學生：程景謙同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>27</td>
+	      <td>103年度榮獲「2014結合地區產業網站架設競賽」榮獲佳作，獲獎作品：康樂國小，參賽學生：譚鉦譯同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>28</td>
+	      <td>103年度榮獲「2014結合地區產業網站架設競賽」榮獲佳作，獲獎作品：紅豆餅預定，參賽學生：林子傑同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>29</td>
+	      <td>103年度榮獲「2014結合地區產業網站架設競賽」榮獲佳作，獲獎作品：洋食館，參賽學生：林琮毅同學，指導老師：李承修助理教授。</td>
+        </tr>
+	    	    <tr>
+	      <td>30</td>
+	      <td>指導臺東專校資管科學生錢冠綸同學參加<a href="https://www.taitung.gov.tw/News_Content.aspx?n=13370&s=33256" target="_blank">第44屆全國技能競賽南區分區技能競賽「網頁設計職類」 榮獲第四名</a>，103年5月2日。</td>
+        </tr>
+	    	    <tr>
+	      <td>31</td>
+	      <td>指導臺東專校資管科學生錢冠綸同學參加第43屆全國技能競賽南區分區技能競賽「網頁設計職類」 榮獲第二名，102年5月12日。</td>
+        </tr>
+	        </table><!-- InstanceEndEditable --></div>
+
+<figure class="text-center">
+  <blockquote class="blockquote">
+    <p><h6>國立臺東專科學校資訊管理科 李承修副教授</h6></p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <cite title="Source Title">2023.2 製作</cite>
+  </figcaption>
+</figure> 
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="offcanvas-navbar.js"></script></body>
+<!-- InstanceEnd --></html>
